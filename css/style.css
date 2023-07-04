@@ -1,1 +1,115 @@
-/*# sourceMappingURL=style.css.map */
+@charset "UTF-8";
+/*
+Sumário - style.scss
+0. Reset, variáveis & HTML
+1. Header
+2. Main
+*/
+/* 0. Reset & Variáveis */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #D8D8D8;
+}
+
+/* 1. Header */
+.header-content {
+  width: 100vw;
+  padding: 15px 40px;
+}
+
+.content-title {
+  text-align: center;
+  background-color: #E2711D;
+  padding: 20px 0;
+}
+
+.content-title-text {
+  font: 600 normal 40px "Montserrat", sans-serif;
+  color: #D8D8D8;
+}
+
+/* 2. Main */
+.main-content {
+  width: 100vw;
+  padding: 15px 40px;
+}
+
+.content-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.content-list-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+#cli-text {
+  width: 300px;
+  height: 35px;
+  border: none;
+  text-indent: 5px;
+  font: 400 normal 16px "Montserrat", sans-serif;
+  color: #1C3144;
+}
+
+#cli-text:focus {
+  outline: none;
+}
+
+.content-list-input-button {
+  width: 50px;
+  height: 35px;
+  border: none;
+  background-color: #E2711D;
+  color: #D8D8D8;
+  font: 600 normal 24px "Montserrat", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.content-list-input-button:hover {
+  background-color: #1C3144;
+}
+
+.content-list-items {
+  display: flex;
+  flex-direction: column;
+  row-gap: 7.5px;
+}
+
+.content-list-items-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12.5px;
+  width: 350px;
+  height: 50px;
+  background-color: #E2711D;
+}
+
+.content-list-items-item-desc-text {
+  font: 400 normal 16px "Montserrat", sans-serif;
+  color: #1C3144;
+}
+
+.content-list-items-item-action {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+
+.fa-pen, .fa-trash, .fa-square {
+  font-size: 20px;
+  color: #1C3144;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+
+    <!-- CDN -->
+    <script src="https://kit.fontawesome.com/c98f74052a.js" crossorigin="anonymous" defer></script>
+
+    <!-- Javascript -->
+    <script src="./js/script.js" defer></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="content-title">
+                <h1 class="content-title-text">To-Do List</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main-content">
+            <section class="content-list">
+                <div class="content-list-input">
+                    <input type="text" name="cli-text" id="cli-text" placeholder="Insira nova tarefa">
+                    <button class="content-list-input-button">+</button>
+                </div>
+                <div class="content-list-items">
+                    <div class="content-list-items-item">
+                        <div class="content-list-items-item-desc">
+                            <p class="content-list-items-item-desc-text">Exemplo 1</p>
+                        </div>
+                        <div class="content-list-items-item-action">
+                            <i class="fa-regular fa-square"></i>
+                            <!-- Quando Apertar
+                                <i class="fa-solid fa-square-check"></i>
+                            -->
+                            <i class="fa-solid fa-pen"></i>
+                            <i class="fa-solid fa-trash"></i>
+                        </div>
+                    </div>
+                    <div class="content-list-items-item">
+                        <div class="content-list-items-item-desc">
+                            <p class="content-list-items-item-desc-text">Exemplo 2</p>
+                        </div>
+                        <div class="content-list-items-item-action">
+                            <i class="fa-regular fa-square"></i>
+                            <i class="fa-solid fa-pen"></i>
+                            <i class="fa-solid fa-trash"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>

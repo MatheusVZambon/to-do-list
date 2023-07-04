@@ -1,0 +1,126 @@
+/*
+Sumário - style.scss
+0. Reset, variáveis & HTML
+1. Header
+2. Main
+*/
+
+@mixin content-container{
+    width: 100vw;
+    padding: 15px 40px;
+}
+
+/* 0. Reset & Variáveis */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+$primary : #D8D8D8;
+$secondary : #E2711D;
+$accent : #1C3144;
+
+$pFont : 'Montserrat', sans-serif;
+
+html{
+    background-color: $primary;
+}
+
+
+/* 1. Header */
+.header-content{
+    @include content-container();
+}
+
+.content-title{
+    text-align: center;
+    background-color: $secondary;
+    padding: 20px 0;
+}
+
+.content-title-text{
+    font: 600 normal 40px $pFont;
+    color: $primary;
+}
+
+
+/* 2. Main */
+.main-content{
+    @include content-container();
+}
+
+.content-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content-list-input{
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+#cli-text{
+    width: 300px;
+    height: 35px;
+    border: none;
+    text-indent: 5px;
+    font: 400 normal 16px $pFont;
+    color: $accent;
+}
+
+#cli-text:focus{
+    outline: none;
+}
+
+.content-list-input-button{
+    width: 50px;
+    height: 35px;
+    border: none;
+    background-color: $secondary;
+    color: $primary;
+    font: 600 normal 24px $pFont;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+.content-list-input-button:hover{
+    background-color: $accent;
+}
+
+.content-list-items{
+    display: flex;
+    flex-direction: column;
+    row-gap: 7.5px;
+}
+
+.content-list-items-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12.5px;
+    width: 350px;
+    height: 50px;
+    background-color: $secondary;
+}
+
+.content-list-items-item-desc-text{
+    font: 400 normal 16px $pFont;
+    color: $accent;
+}
+
+.content-list-items-item-action{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.fa-pen,.fa-trash,.fa-square{
+    font-size: 20px;
+    color: $accent;
+}
