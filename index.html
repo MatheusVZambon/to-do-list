@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/c98f74052a.js" crossorigin="anonymous" defer></script>
 
     <!-- Javascript -->
-    <script src="./js/script.js" defer></script>
+    <script src="./js/nscript.js" defer></script>
     
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css">
@@ -27,25 +27,38 @@
         <div class="main-content">
             <section class="content-list">
                 <div class="content-list-input">
-                    <input type="text" name="cli-text" id="cli-text" placeholder="Insira nova tarefa">
-                    <button class="content-list-input-button" id="cli-button">+</button>
+                    <input type="text" id="cli-text" placeholder="Insira nova tarefa">
+                    <button id="cli-button">+</button>
                 </div>
-                <div class="content-list-items" id="cli-list">
-                    <div class="content-list-items-item" id="cli-item">
+                <div class="content-list-items">
+                    <div class="content-list-items-item">
                         <div class="content-list-items-item-desc">
-                            <p class="content-list-items-item-desc-text" id="cli-task-text">Exemplo 1</p>
+                            <p class="content-list-items-item-desc-text">Exemplo 1</p>
                         </div>
                         <div class="content-list-items-item-action">
-                            <div class="item-action-container" id="iac-done">
+                            <div class="item-action-container iac-done">
                                 <i class="fa-regular fa-square"></i>
                             </div>
-                            <!-- Quando Apertar
-                                <i class="fa-solid fa-square-check"></i>
-                            -->
-                            <div class="item-action-container" id="iac-edit">
+                            <div class="item-action-container iac-edit">
                                 <i class="fa-solid fa-pen"></i>
                             </div>
-                            <div class="item-action-container" id="iac-delete">
+                            <div class="item-action-container iac-delete">
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-list-items-item">
+                        <div class="content-list-items-item-desc">
+                            <p class="content-list-items-item-desc-text">Exemplo 2</p>
+                        </div>
+                        <div class="content-list-items-item-action">
+                            <div class="item-action-container iac-done">
+                                <i class="fa-regular fa-square"></i>
+                            </div>
+                            <div class="item-action-container iac-edit">
+                                <i class="fa-solid fa-pen"></i>
+                            </div>
+                            <div class="item-action-container iac-delete">
                                 <i class="fa-solid fa-trash"></i>
                             </div>
                         </div>
