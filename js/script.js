@@ -43,3 +43,25 @@ function editTask(){
 
 
 // Tarefa Excluída
+let elm_Item = document.getElementById('cli-item');
+let btn_Del = document.getElementById('iac-delete');
+let elm_DelBox = document.getElementById('delete-box-container');
+let btn_ConfDel = document.getElementById('db-btn-confirm');
+let btn_CnclDel = document.getElementById('db-btn-cancel');
+
+btn_Del.addEventListener('click', deleteTask);
+
+function deleteTask(){
+    elm_DelBox.classList.replace('dbc-hide','delete-box-container');
+
+    btn_CnclDel.addEventListener('click', () => {
+        elm_DelBox.classList.replace('delete-box-container','dbc-hide');
+    })
+
+    btn_ConfDel.addEventListener('click', () => {
+        let prv_One = btn_Del.parentElement; // Acessa 'pai' do botão deletar
+        let prv_Two = prv_One.parentElement; // Acessa 'avô' do botão deletar
+        prv_Two.remove();
+        elm_DelBox.classList.replace('delete-box-container','dbc-hide');
+    })
+}

@@ -123,7 +123,7 @@ html {
   cursor: pointer;
 }
 
-.edit-box-container {
+.edit-box-container, .delete-box-container {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -137,11 +137,11 @@ html {
   background-color: rgba(28, 49, 68, 0.6);
 }
 
-.ebc-hide {
+.ebc-hide, .dbc-hide {
   display: none;
 }
 
-.edit-box {
+.edit-box, .delete-box {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -160,7 +160,7 @@ html {
   justify-content: space-between;
 }
 
-.edit-box-title-text {
+.edit-box-title-text, .delete-box-title-text {
   font: 300 normal 24px "Montserrat", sans-serif;
   color: #D8D8D8;
 }
@@ -180,7 +180,7 @@ html {
   outline: none;
 }
 
-.edit-box-user-button > button {
+.edit-box-user-button > button, .delete-box-user > button {
   padding: 5px;
   font: 400 normal 16px "Montserrat", sans-serif;
   border: none;
@@ -190,10 +190,10 @@ html {
   transition: all 0.2s ease-in;
 }
 
-.edit-box-user-button-confirm:hover {
+.edit-box-user-button-confirm:hover, .delete-box-user-button-confirm:hover {
   background-color: green;
 }
 
-.edit-box-user-button-cancel:hover {
+.edit-box-user-button-cancel:hover, .delete-box-user-button-cancel:hover {
   background-color: red;
 }/*# sourceMappingURL=style.css.map */
