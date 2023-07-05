@@ -53,7 +53,7 @@ html {
   margin-bottom: 25px;
 }
 
-#cli-text {
+#cli-text, #ebu-text {
   width: 300px;
   height: 35px;
   border: none;
@@ -62,7 +62,7 @@ html {
   color: #1C3144;
 }
 
-#cli-text:focus {
+#cli-text:focus, #ebu-text:focus {
   outline: none;
 }
 
@@ -109,7 +109,91 @@ html {
        column-gap: 10px;
 }
 
-.fa-pen, .fa-trash, .fa-square {
-  font-size: 20px;
+.fa-pen, .fa-trash, .fa-square, .fa-square-check {
+  font-size: 100%;
   color: #1C3144;
+}
+
+.item-action-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.edit-box-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(28, 49, 68, 0.6);
+}
+
+.ebc-hide {
+  display: none;
+}
+
+.edit-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  width: 300px;
+  height: 150px;
+  padding: 20px 10px;
+  background-color: #1C3144;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.edit-box-title-text {
+  font: 300 normal 24px "Montserrat", sans-serif;
+  color: #D8D8D8;
+}
+
+.edit-box-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 12.5px;
+}
+
+#ebu-text {
+  width: 100%;
+}
+
+#ebu-text:focus {
+  outline: none;
+}
+
+.edit-box-user-button > button {
+  padding: 5px;
+  font: 400 normal 16px "Montserrat", sans-serif;
+  border: none;
+  color: #D8D8D8;
+  cursor: pointer;
+  background-color: #E2711D;
+  transition: all 0.2s ease-in;
+}
+
+.edit-box-user-button-confirm:hover {
+  background-color: green;
+}
+
+.edit-box-user-button-cancel:hover {
+  background-color: red;
 }/*# sourceMappingURL=style.css.map */

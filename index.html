@@ -28,30 +28,40 @@
             <section class="content-list">
                 <div class="content-list-input">
                     <input type="text" name="cli-text" id="cli-text" placeholder="Insira nova tarefa">
-                    <button class="content-list-input-button">+</button>
+                    <button class="content-list-input-button" id="cli-button">+</button>
                 </div>
-                <div class="content-list-items">
-                    <div class="content-list-items-item">
+                <div class="content-list-items" id="cli-list">
+                    <div class="content-list-items-item" id="cli-item">
                         <div class="content-list-items-item-desc">
-                            <p class="content-list-items-item-desc-text">Exemplo 1</p>
+                            <p class="content-list-items-item-desc-text" id="cli-task-text">Exemplo 1</p>
                         </div>
                         <div class="content-list-items-item-action">
-                            <i class="fa-regular fa-square"></i>
+                            <div class="item-action-container" id="iac-done">
+                                <i class="fa-regular fa-square"></i>
+                            </div>
                             <!-- Quando Apertar
                                 <i class="fa-solid fa-square-check"></i>
                             -->
-                            <i class="fa-solid fa-pen"></i>
-                            <i class="fa-solid fa-trash"></i>
+                            <div class="item-action-container" id="iac-edit">
+                                <i class="fa-solid fa-pen"></i>
+                            </div>
+                            <div class="item-action-container" id="iac-delete">
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="content-list-items-item">
-                        <div class="content-list-items-item-desc">
-                            <p class="content-list-items-item-desc-text">Exemplo 2</p>
+                </div>
+                <div class="ebc-hide" id="edit-box-container">
+                    <div class="edit-box">
+                        <div class="edit-box-title">
+                            <p class="edit-box-title-text">Editar Tarefa</p>
                         </div>
-                        <div class="content-list-items-item-action">
-                            <i class="fa-regular fa-square"></i>
-                            <i class="fa-solid fa-pen"></i>
-                            <i class="fa-solid fa-trash"></i>
+                        <div class="edit-box-user">
+                            <input type="text" name="ebu-text" id="ebu-text" placeholder="Edite a tarefa">
+                            <div class="edit-box-user-button">
+                                <button class="edit-box-user-button-confirm" id="eb-btn-confirm">Confirmar</button>
+                                <button class="edit-box-user-button-cancel" id="eb-btn-cancel">Cancelar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
