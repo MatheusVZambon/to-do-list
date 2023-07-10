@@ -74,3 +74,89 @@ function deleteTask(){
         elm_DelBox.classList.replace('delete-box-container','dbc-hide');
     })
 }
+
+// Nova Tarefa
+let btn_NewTask = document.getElementById('cli-button');
+
+btn_NewTask.addEventListener('click', addTask);
+
+function addTask(){
+    let txt_NewTask = document.getElementById('cli-text').value;
+    let elm_TaskList = document.getElementById('cli-list');
+
+    const ni_Div = document.createElement('div');
+    ni_Div.classList.add('content-list-items-item');
+
+    const ni_Desc = document.createElement('div');
+    ni_Desc.classList.add('content-list-items-item-desc');
+
+    const ni_DescText = document.createElement('p');
+    ni_DescText.classList.add('content-list-items-item-desc-text');
+    ni_DescText.innerText = txt_NewTask;
+
+    document.getElementById('cli-text').value = '';
+
+    const ni_Action = document.createElement('div');
+    ni_Action.classList.add('content-list-items-item-action');
+
+    const ni_ACDone = document.createElement('div');
+    ni_ACDone.classList.add('item-action-container');
+    ni_ACDone.classList.add('iac-done');
+
+    const ni_ACEdit = document.createElement('div');
+    ni_ACEdit.classList.add('item-action-container');
+    ni_ACEdit.classList.add('iac-edit');
+
+    const ni_ACDel = document.createElement('div');
+    ni_ACDel.classList.add('item-action-container');
+    ni_ACDel.classList.add('iac-delete');
+
+    const ni_IDone = document.createElement('i');
+    ni_IDone.classList.add('fa-regular');
+    ni_IDone.classList.add('fa-square');
+
+    const ni_IEdit = document.createElement('i');
+    ni_IEdit.classList.add('fa-solid');
+    ni_IEdit.classList.add('fa-pen');
+
+    const ni_IDel = document.createElement('i');
+    ni_IDel.classList.add('fa-solid');
+    ni_IDel.classList.add('fa-trash');
+
+    elm_TaskList.appendChild(ni_Div);
+
+    ni_Div.appendChild(ni_Desc);
+    ni_Div.appendChild(ni_Action);
+
+    ni_Desc.appendChild(ni_DescText);
+
+    ni_Action.appendChild(ni_ACDone);
+    ni_Action.appendChild(ni_ACEdit);
+    ni_Action.appendChild(ni_ACDel);
+
+    ni_ACDel.appendChild(ni_IDel);
+    ni_ACDone.appendChild(ni_IDone);
+    ni_ACEdit.appendChild(ni_IEdit);
+
+
+    const arr_DoneButtons = Array.from(document.getElementsByClassName('iac-done'));
+
+    for (let x = 0; x < arr_DoneButtons.length; x++){
+    arr_DoneButtons[x].addEventListener('click',finishTask);
+    }
+
+    const arr_EditButtons = Array.from(document.getElementsByClassName('iac-edit'));
+
+    for (let y = 0; y < arr_EditButtons.length; y++){
+    arr_EditButtons[y].addEventListener('click',editTask);
+    }
+
+    const arr_DelButtons = Array.from(document.getElementsByClassName('iac-delete'));
+
+    for (let z = 0; z < arr_DelButtons.length; z++){
+        arr_DelButtons[z].addEventListener('click', deleteTask);
+    }
+}
+
+
+
