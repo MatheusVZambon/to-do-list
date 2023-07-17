@@ -1,11 +1,12 @@
 @charset "UTF-8";
 /*
 Sumário - style.scss
-0. Reset, variáveis & HTML
-1. Header
-2. Main
+0. Reset | Var | HTML
+1. Mixins
+2. Header
+3. Main | List
 */
-/* 0. Reset & Variáveis */
+/* 0. Reset | Var | HTML */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap");
 * {
   margin: 0;
@@ -17,7 +18,8 @@ html {
   background-color: #D8D8D8;
 }
 
-/* 1. Header */
+/* 1. Mixins */
+/* 2. Header */
 .header-content {
   width: 100vw;
   padding: 15px 40px;
@@ -34,7 +36,7 @@ html {
   color: #D8D8D8;
 }
 
-/* 2. Main */
+/* 3. Main | List */
 .main-content {
   width: 100vw;
   padding: 15px 40px;
@@ -43,8 +45,8 @@ html {
 .content-list {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
 }
 
 .content-list-input {
@@ -155,8 +157,8 @@ html {
   padding: 20px 10px;
   background-color: #1C3144;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -167,8 +169,8 @@ html {
 
 .edit-box-user {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   row-gap: 12.5px;
 }
 
@@ -196,4 +198,10 @@ html {
 
 .edit-box-user-button-cancel:hover, .delete-box-user-button-cancel:hover {
   background-color: red;
+}
+
+.finish-task {
+  color: #D8D8D8;
+  text-decoration: line-through;
+  font-style: italic;
 }/*# sourceMappingURL=style.css.map */

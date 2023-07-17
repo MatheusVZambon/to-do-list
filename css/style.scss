@@ -1,16 +1,14 @@
 /*
 Sumário - style.scss
-0. Reset, variáveis & HTML
-1. Header
-2. Main
+0. Reset | Var | HTML
+1. Mixins
+2. Header
+3. Main | List
 */
 
-@mixin content-container{
-    width: 100vw;
-    padding: 15px 40px;
-}
 
-/* 0. Reset & Variáveis */
+/* 0. Reset | Var | HTML */
+
 *{
     margin: 0;
     padding: 0;
@@ -30,7 +28,37 @@ html{
 }
 
 
-/* 1. Header */
+/* 1. Mixins */
+
+@mixin content-container{
+    width: 100vw;
+    padding: 15px 40px;
+}
+
+@mixin absolute-element{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-center-column{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* 2. Header */
+
 .header-content{
     @include content-container();
 }
@@ -47,21 +75,19 @@ html{
 }
 
 
-/* 2. Main */
+/* 3. Main | List */
+
 .main-content{
     @include content-container();
 }
 
 .content-list{
-    display: flex;
-    align-items: center;
+    @include flex-center-column();
     justify-content: center;
-    flex-direction: column;
 }
 
 .content-list-input{
-    display: flex;
-    align-items: center;
+    @include flex-center();
     margin-bottom: 25px;
 }
 
@@ -100,8 +126,7 @@ html{
 }
 
 .content-list-items-item{
-    display: flex;
-    align-items: center;
+    @include flex-center();
     justify-content: space-between;
     padding: 0 12.5px;
     width: 350px;
@@ -115,8 +140,7 @@ html{
 }
 
 .content-list-items-item-action{
-    display: flex;
-    align-items: center;
+    @include flex-center();
     column-gap: 10px;
 }
 
@@ -126,8 +150,7 @@ html{
 }
 
 .item-action-container{
-    display: flex;
-    align-items: center;
+    @include flex-center();
     justify-content: center;
     width: 20px;
     height: 20px;
@@ -135,14 +158,7 @@ html{
 }
 
 .edit-box-container, .delete-box-container{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    -o-transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
-    -moz-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
+    @include absolute-element();
     width: 100vw;
     height: 100vh;
     background-color: rgba($color: $accent, $alpha: 0.6);
@@ -153,21 +169,12 @@ html{
 }
 
 .edit-box, .delete-box{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    -o-transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
-    -moz-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
+    @include absolute-element();
     width: 300px;
     height: 150px;
     padding: 20px 10px;
     background-color: $accent;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-center-column();
     justify-content: space-between;
 }
 
@@ -177,9 +184,7 @@ html{
 }
 
 .edit-box-user{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-center-column();
     row-gap: 12.5px;
 }
 
@@ -208,4 +213,10 @@ html{
 
 .edit-box-user-button-cancel:hover, .delete-box-user-button-cancel:hover{
     background-color: red;
+}
+
+.finish-task{
+    color: #D8D8D8;
+    text-decoration: line-through;
+    font-style: italic;
 }
