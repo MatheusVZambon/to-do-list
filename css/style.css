@@ -16,6 +16,7 @@ Sumário - style.scss
 
 html {
   background-color: #D8D8D8;
+  overflow-x: hidden;
 }
 
 /* 1. Mixins */

@@ -55,9 +55,14 @@ function editTask(){
     let btn_Cncl = document.getElementById('eb-btn-cancel')
 
     elm_EditBox.classList.replace('ebc-hide','edit-box-container')
+    document.getElementsByTagName('body')[0].style.height = '100vh'
+    document.getElementsByTagName('body')[0].style.overflow = 'hidden'
 
     btn_Cncl.addEventListener('click', () => {
         elm_EditBox.classList.replace('edit-box-container','ebc-hide')
+        document.getElementsByTagName('body')[0].style.height = 'auto'
+        document.getElementsByTagName('body')[0].style.overflowY = 'auto'
+        document.getElementsByTagName('body')[0].style.overflowX = 'hidden'
     })
 
     btn_Conf.onclick = () => {
@@ -69,6 +74,9 @@ function editTask(){
             let txt_EditLs = prv_Two.firstElementChild.innerText
             prv_Two.firstElementChild.innerText = txt_Edit.value
             elm_EditBox.classList.replace('edit-box-container','ebc-hide')
+            document.getElementsByTagName('body')[0].style.height = 'auto'
+            document.getElementsByTagName('body')[0].style.overflowY = 'auto'
+            document.getElementsByTagName('body')[0].style.overflowX = 'hidden'
             for (let i = 0; i < arr_Storage.length; i++){
                 if (arr_Storage[i] == txt_EditLs){
                     arr_Storage[i] = txt_Edit.value
@@ -93,9 +101,14 @@ function deleteTask(){
     let btn_Cncl = document.getElementById('db-btn-cancel')
 
     elm_DelBox.classList.replace('dbc-hide','delete-box-container')
+    document.getElementsByTagName('body')[0].style.height = '100vh'
+    document.getElementsByTagName('body')[0].style.overflow = 'hidden'
 
     btn_Cncl.addEventListener('click', () => {
         elm_DelBox.classList.replace('delete-box-container','dbc-hide')
+        document.getElementsByTagName('body')[0].style.height = 'auto'
+        document.getElementsByTagName('body')[0].style.overflowY = 'auto'
+        document.getElementsByTagName('body')[0].style.overflowX = 'hidden'
     })
 
     btn_Conf.addEventListener('click', () => {
@@ -103,14 +116,19 @@ function deleteTask(){
         let prv_Two = prv_One.parentElement // Acessa 'avô' do botão deletar
         prv_Two.remove()
         elm_DelBox.classList.replace('delete-box-container','dbc-hide')
+        document.getElementsByTagName('body')[0].style.height = 'auto'
+        document.getElementsByTagName('body')[0].style.overflowY = 'auto'
+        document.getElementsByTagName('body')[0].style.overflowX = 'hidden'
         let prv_Three = prv_One.previousElementSibling; // Acessa 'tio' do botão deletar
         let prv_Four = prv_Three.firstElementChild; // Acessa 'primo' do botão deletar
         for (let i = 0; i < arr_Storage.length; i++){
             if (arr_Storage[i] == prv_Four.innerText){
                 arr_Storage.splice(i,1)
+                arr_STasks.splice(i,1)
             }
         }
         localStorage.setItem('items', JSON.stringify(arr_Storage))
+        localStorage.setItem('status', JSON.stringify(arr_STasks))
     })
 }
 
